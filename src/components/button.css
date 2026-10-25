@@ -1,0 +1,40 @@
+/*
+ * button: `<button class="tg-button">`. A native button, so its keyboard, focus
+ * and form behaviour are the platform's.
+ *
+ *   data-variant  default, primary, quiet, link
+ *   data-size     md (the default), sm, xs
+ *   data-shape    icon: a square holding one icon
+ *
+ * The variants, sizes and states (hover, pressed, focus, and disabled by
+ * `:disabled` or `aria-disabled`) are parts of the `tg.button` group, nested in
+ * the rule by `@apply`.
+ */
+
+.tg-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin: 0;
+  padding-block: 0;
+  border-style: solid;
+  outline-style: solid;
+  white-space: nowrap;
+  @apply --tg-button;
+}
+
+/* A link is as tall as its words, unless a size says otherwise. */
+.tg-button[data-variant='link']:not([data-size='sm'], [data-size='xs']) {
+  height: auto;
+}
+
+.tg-button[data-variant='link'] {
+  text-align: left;
+}
+
+/* An icon alone is as wide as it is tall. */
+.tg-button[data-shape='icon'] {
+  aspect-ratio: 1;
+  padding-inline: 0;
+}

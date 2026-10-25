@@ -1,0 +1,27 @@
+/*
+ * tabs: `<tg-tabs>` holding `<button role="tab" aria-selected>`s. Choosing which
+ * pane is in front. The element sets the tablist role, keeps one tab in the tab
+ * order, and moves between tabs with the arrow keys, Home and End.
+ * Selected is `aria-selected="true"`; a tab that cannot be chosen is
+ * `aria-disabled="true"` and is passed over.
+ */
+
+tg-tabs {
+  display: flex;
+  border-bottom-style: solid;
+  @apply --tg-tabs;
+}
+
+tg-tabs > button {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  /* The selected tab's underline sits on the strip's own border. */
+  margin: 0 0 calc(-1 * toghen(toghen-plugin.tg.bw.1));
+  border: 0;
+  border-bottom-style: solid;
+  outline-style: solid;
+  white-space: nowrap;
+  @apply --tg-tabs-tab;
+}

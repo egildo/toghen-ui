@@ -1,0 +1,11 @@
+/*
+ * divider: `<hr class="tg-divider">`. A hairline between two blocks. Where a
+ * border is part of a component (a row's, a table's), the component draws it.
+ */
+
+.tg-divider {
+  flex: none;
+  margin-inline: 0;
+  border: 0;
+  @apply --tg-divider;
+}

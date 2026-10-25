@@ -1,0 +1,27 @@
+/*
+ * segmented: `<tg-segmented>` holding `<button role="radio" aria-checked>`s. One
+ * of a few choices, chosen with the pointer or the arrow keys (the element
+ * moves focus and the check, and keeps one segment in the tab order).
+ * Selected is `aria-checked="true"`; hover and pressed lay a tint over the
+ * segment, so a chosen one keeps its colour under the pointer.
+ */
+
+tg-segmented {
+  display: inline-flex;
+  flex: none;
+  overflow: hidden;
+  border-style: solid;
+  @apply --tg-segmented;
+}
+
+tg-segmented > button {
+  margin: 0;
+  border: 0;
+  outline-style: solid;
+  white-space: nowrap;
+  @apply --tg-segmented-item;
+}
+
+tg-segmented > button + button {
+  border-inline-start: toghen(toghen-plugin.tg.bw.1) solid toghen(toghen-plugin.tg.line.strong);
+}

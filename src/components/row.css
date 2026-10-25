@@ -1,0 +1,139 @@
+/*
+ * row: `<tg-row>`, the signature of the screen: one anatomy at three heights.
+ * Its parts are `[data-part]`s, all optional and in this order: leading (a mark),
+ * label, value, trailing (an action), detail (what shows when the row is open).
+ *
+ *   data-density   regular (the default, 28 px), dense (22), roomy (36)
+ *   data-tone      warn, err: a coloured gutter on the left
+ *   label, value   a line of words, cut with an ellipsis when it does not fit
+ *   tabindex       makes it interactive: pointer, pressed and focus answer
+ *   aria-selected  tints the row (an option of a `tg-list`)
+ *
+ * A row with a detail is a disclosure: the element wraps the leading mark, the
+ * label and the value in a `<button data-part="summary">`, with `aria-expanded`
+ * on it. The trailing part sits beside the button, outside it, and the detail
+ * is the region it controls. Open, the row is raised to a sunken surface with an
+ * accent gutter and the detail shows. A page may write the summary button
+ * itself (a row whose line loads something); it is laid out the same way. The
+ * parts are the row's children, or the summary's.
+ *
+ * An option of a `tg-list` that holds a detail shows it while it is selected.
+ */
+
+/*
+ * The line's height is the row's minimum height as the density part has re-pointed it.
+ * A row answers the pointer and shows focus when it has a tabindex or a summary (the
+ * group's `interactive`), and its open and focus are read from the summary, though
+ * what takes the focus is the summary button.
+ */
+tg-row {
+  --_line: toghen(toghen-plugin.tg.row.minHeight);
+  display: flex;
+  align-items: center;
+  row-gap: 0;
+  border-left-style: solid;
+  @apply --tg-row;
+}
+
+tg-row:is([tabindex], :has(> [data-part='summary'])) {
+  outline-style: solid;
+}
+
+/* A row that holds a detail puts it on a line of its own; one without never wraps its parts. */
+tg-row:has(> [data-part='detail']) {
+  flex-wrap: wrap;
+}
+
+/* The line: every part except the detail is as tall as the density says. */
+tg-row > [data-part]:not([data-part='detail']) {
+  min-height: var(--_line);
+}
+
+/*
+ * The summary is the line's button, without a button's face: it is the row's
+ * parts in a row of their own, and the trailing part sits beside it.
+ */
+tg-row > [data-part='summary'] {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  gap: inherit;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  cursor: inherit;
+  /* The row draws the focus ring, around the whole line. */
+  outline: none;
+}
+
+/* A mark and an action hold controls, so they are boxes that centre them. */
+:is(tg-row, tg-row > [data-part='summary']) > :is([data-part='leading'], [data-part='trailing']) {
+  display: inline-flex;
+  align-items: center;
+}
+
+:is(tg-row, tg-row > [data-part='summary']) > [data-part='leading'] {
+  @apply --tg-row-leading;
+}
+
+/*
+ * Words are a block, so one that does not fit is cut with an ellipsis (a flex
+ * box cannot do that), centred on the line by its line height. A label of
+ * several lines is the page's to lay out: `display: flex`, and its own line height.
+ */
+:is(tg-row, tg-row > [data-part='summary']) > :is([data-part='label'], [data-part='value']) {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: var(--_line);
+}
+
+:is(tg-row, tg-row > [data-part='summary']) > [data-part='label'] {
+  flex: 1 1 auto;
+}
+
+:is(tg-row, tg-row > [data-part='summary']) > [data-part='value'] {
+  flex: 0 1 auto;
+  margin-inline-start: auto;
+  @apply --tg-row-value;
+}
+
+:is(tg-row, tg-row > [data-part='summary']) > [data-part='label'] + [data-part='value'] {
+  margin-inline-start: 0;
+}
+
+tg-row > [data-part='trailing'] {
+  @apply --tg-row-trailing;
+}
+
+tg-row > [data-part='trailing'],
+tg-row > [data-part='detail'] {
+  cursor: default;
+}
+
+tg-row > [data-part='detail'] {
+  flex: 0 0 100%;
+  @apply --tg-row-detail;
+}
+
+/*
+ * The detail shows while the row is open: its summary is expanded, or it is a
+ * selected option of a list. `!important`, as `[hidden]` has it: a page that
+ * gives its detail a `display` of its own does not open a closed row.
+ */
+tg-row:not(:has(> [data-part='summary'][aria-expanded='true'])):not(tg-list > tg-row[aria-selected='true']) > [data-part='detail'] {
+  display: none !important;
+}
+
+/* The wash is for the line: over the detail, the row is at rest. */
+tg-row:has(> [data-part='summary']):has(> [data-part='detail']:hover) {
+  box-shadow: toghen(toghen-plugin.tg.row.interactive.boxShadow);
+}

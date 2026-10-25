@@ -1,0 +1,29 @@
+/*
+ * dot: `<tg-dot data-state="drifted">`. Six states of a thing the screen is
+ * watching, two for a process, and silence (no `data-state`, nothing drawn).
+ * The element gives it its spoken label.
+ */
+
+tg-dot {
+  display: inline-block;
+  flex: none;
+  border-radius: 50%;
+  border-style: solid;
+  @apply --tg-dot;
+}
+
+tg-dot[data-state='busy'] {
+  animation: tg-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes tg-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  tg-dot[data-state='busy'] {
+    animation: none;
+  }
+}

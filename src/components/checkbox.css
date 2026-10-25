@@ -1,0 +1,28 @@
+/*
+ * checkbox: `<label class="tg-checkbox"><input type="checkbox"> Words</label>`.
+ * The box is the platform's, in the accent; the label is ours.
+ *
+ *   data-variant  plain (the default), boxed: the whole label is a bordered
+ *                 control that tints when its box is checked
+ *
+ * The label's selected, focus and disabled are its input's: the `tg.checkbox`
+ * group spells them `:has(> input…)`, and the boxed variant inherits them.
+ */
+
+.tg-checkbox {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  @apply --tg-checkbox;
+}
+
+.tg-checkbox > input {
+  flex: none;
+  margin: 0;
+  outline-style: solid;
+  @apply --tg-checkbox-input;
+}
+
+.tg-checkbox[data-variant='boxed'] {
+  border-style: solid;
+}

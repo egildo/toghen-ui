@@ -1,0 +1,65 @@
+/*
+ * The ground the components stand on: a box model, the `hidden` attribute that
+ * wins, form controls that inherit their face, the theme root, and the text
+ * styles as roles. No component lives here.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:where(button, input, select) {
+  font: inherit;
+  color: inherit;
+}
+
+/* The element that carries the theme paints the ground and sets the working face. */
+[data-theme],
+.figma-light,
+.figma-dark {
+  background-color: toghen(toghen-plugin.tg.bg.base);
+  color: toghen(toghen-plugin.tg.text.1);
+  font: toghen(toghen-plugin.tg.text.body);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The text styles, as roles: `<span data-text="label">`. */
+[data-text='body'] {
+  @apply --tg-text-body;
+}
+
+[data-text='small'] {
+  @apply --tg-text-small;
+}
+
+[data-text='label'] {
+  @apply --tg-text-label;
+}
+
+[data-text='code'] {
+  @apply --tg-text-code;
+}
+
+[data-text='title'] {
+  @apply --tg-text-title;
+}
+
+[data-text='heading'] {
+  @apply --tg-text-heading;
+}
+
+.tg-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

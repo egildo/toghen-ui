@@ -1,0 +1,33 @@
+/*
+ * chip: `<tg-chip>`. A small counter or tag: an icon or dot and a word, often a
+ * number in a `<strong>`.
+ *
+ *   data-tone     plain (the default), warn, err, ok
+ *   data-size     md (the default), sm
+ *   data-variant  code: the chip holds a name or a value, in the code face
+ *   aria-pressed  makes it a toggle: it takes focus, hover, pressed, and a
+ *                 second line inside its border when on
+ */
+
+tg-chip {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  border-style: solid;
+  white-space: nowrap;
+  @apply --tg-chip;
+}
+
+tg-chip[aria-pressed] {
+  outline-style: solid;
+}
+
+tg-chip[data-variant='code'] strong {
+  color: toghen(toghen-plugin.tg.text.1);
+}
+
+tg-chip[data-tone='warn'] strong,
+tg-chip[data-tone='err'] strong,
+tg-chip[data-tone='ok'] strong {
+  color: inherit;
+}

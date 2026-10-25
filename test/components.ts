@@ -1,0 +1,21 @@
+/** The eighteen components of the design system (specs.md, "The component set"). */
+export const COMPONENTS = [
+  'icon',
+  'dot',
+  'swatch',
+  'monogram',
+  'divider',
+  'button',
+  'field',
+  'select',
+  'checkbox',
+  'chip',
+  'segmented',
+  'tabs',
+  'callout',
+  'card',
+  'dropzone',
+  'row',
+  'list',
+  'table',
+];

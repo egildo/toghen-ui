@@ -1,0 +1,16 @@
+/*
+ * swatch: `<span class="tg-swatch" style="background-color: #hex">`. The fill is
+ * data, so it is the page's to set; `data-variant="empty"` is a swatch that has
+ * no fill to show, drawn as a hatch. `data-size` is sm, md (the default) or lg.
+ */
+
+.tg-swatch {
+  display: inline-block;
+  flex: none;
+  border-style: solid;
+  @apply --tg-swatch;
+}
+
+.tg-swatch[data-variant='empty'] {
+  background-image: repeating-linear-gradient(45deg, transparent 0 2px, toghen(toghen-plugin.tg.line.strong) 2px 3px);
+}

@@ -1,0 +1,17 @@
+/*
+ * select: `<select class="tg-select">`. A native select, so the platform
+ * draws its list and handles its keys.
+ *
+ *   data-size  md (the default), sm
+ */
+
+.tg-select {
+  margin: 0;
+  border-style: solid;
+  outline-style: solid;
+  @apply --tg-select;
+}
+
+.tg-select[data-size='sm'] {
+  min-width: 0;
+}

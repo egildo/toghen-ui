@@ -1,0 +1,45 @@
+/*
+ * callout: `<tg-callout data-tone="info">` holding, in any order, a
+ * `[data-part="text"]` (a `[data-part="title"]` and a `[data-part="line"]`)
+ * and at most one action. The element draws the mark by tone: a dot for warn,
+ * the warning icon for err, the info icon for info.
+ *
+ *   data-tone  info (the default), warn, err
+ *   data-size  md (the default), sm: one quiet sentence inside a row
+ */
+
+tg-callout {
+  display: flex;
+  align-items: flex-start;
+  border-style: solid;
+  @apply --tg-callout;
+}
+
+/* The mark is as tall as one line of text, so it centres on the first line. */
+tg-callout > [data-part='mark'] {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  height: calc(toghen(toghen-plugin.tg.lh.normal) * 1em);
+  @apply --tg-callout-mark;
+}
+
+tg-callout > [data-part='text'] {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: toghen(toghen-plugin.tg.sp.0);
+  min-width: 0;
+}
+
+tg-callout [data-part='title'] {
+  @apply --tg-callout-title;
+}
+
+tg-callout [data-part='line'] {
+  @apply --tg-callout-line;
+}
+
+tg-callout > .tg-button {
+  flex: none;
+}

@@ -1,0 +1,13 @@
+/*
+ * The token layer: every token of the design system, declared as a custom
+ * property, once for the defaults and once for each context of a modifier that
+ * varies it. This is the only place that declares; every other layer reads,
+ * except a component's parts, which re-point a property on their own element.
+ *
+ * The directive is replaced at build time from the resolver document
+ * (`tokens/toghen-plugin.resolver.json`). The theme blocks are spelled
+ * `.figma-light` / `.figma-dark` (what Figma puts on `<html>`) and
+ * `[data-theme='…']`. A component's states and variants are parts of its token
+ * group, not contexts: they write no block here, and the mixins carry them.
+ */
+@toghen contexts toghen-plugin;

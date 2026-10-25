@@ -1,0 +1,18 @@
+{
+  // The tests are TypeScript; the package itself is plain JavaScript (ES modules, no build for the elements),
+  // which the tests import. Types are checked in the tests, and the JavaScript is read, not checked.
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "checkJs": false,
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["test", "scripts"]
+}

@@ -1,0 +1,2557 @@
+{
+  "tg": {
+    "$extensions": {
+      "com.toghen": {
+        "css": {
+          "parts": {
+            "variant": {
+              "primary": "[data-variant='primary']",
+              "quiet": "[data-variant='quiet']",
+              "link": "[data-variant='link']",
+              "code": "[data-variant='code']",
+              "boxed": "[data-variant='boxed']"
+            },
+            "size": {
+              "sm": "[data-size='sm']",
+              "xs": "[data-size='xs']",
+              "lg": "[data-size='lg']",
+              "xl": "[data-size='xl']"
+            },
+            "density": {
+              "dense": "[data-density='dense']",
+              "roomy": "[data-density='roomy']"
+            },
+            "interaction": {
+              "toggle": "[aria-pressed]",
+              "interactive": "[tabindex]"
+            },
+            "state": {
+              "drifted": "[data-state='drifted']",
+              "upstream": "[data-state='upstream']",
+              "absent": "[data-state='absent']",
+              "unread": "[data-state='unread']",
+              "connected": "[data-state='connected']",
+              "busy": "[data-state='busy']",
+              "idle": "[data-state='idle']",
+              "error": "[data-state='error']"
+            },
+            "drag": {
+              "over": "[data-over]"
+            },
+            "validity": {
+              "invalid": ":is([aria-invalid='true'], :has(> [aria-invalid='true']))"
+            },
+            "composition": {
+              "flush": ":has(> :is(tg-row, tg-list))"
+            },
+            "selection": {
+              "selected": ":is([aria-selected='true'], [aria-pressed='true'], [aria-checked='true'], :checked)"
+            },
+            "disclosure": {
+              "open": "[aria-expanded='true']"
+            },
+            "pointer": {
+              "hover": ":hover",
+              "pressed": ":active"
+            },
+            "focus": {
+              "focus": ":focus-visible"
+            },
+            "availability": {
+              "disabled": ":is(:disabled, [aria-disabled='true'])"
+            }
+          }
+        }
+      }
+    },
+    "accent": {
+      "$type": "color",
+      "bg": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0471,
+            0.549,
+            0.9137
+          ],
+          "hex": "#0c8ce9"
+        },
+        "$description": "The active tab, the one primary button of a pane"
+      },
+      "bg-hover": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.051,
+            0.5922,
+            0.9882
+          ],
+          "hex": "#0d97fc"
+        },
+        "$description": "The accent under the pointer"
+      },
+      "bg-pressed": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0431,
+            0.4824,
+            0.8039
+          ],
+          "hex": "#0b7bcd"
+        },
+        "$description": "The accent while pressed"
+      }
+    },
+    "text": {
+      "on-accent": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#ffffff"
+        },
+        "$description": "Words on the accent",
+        "$type": "color"
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.2}",
+          "fontWeight": 400,
+          "lineHeight": "{tg.lh.normal}"
+        },
+        "$description": "Words"
+      },
+      "body-strong": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.2}",
+          "fontWeight": 600,
+          "lineHeight": "{tg.lh.normal}"
+        },
+        "$description": "A callout title"
+      },
+      "small": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.1}",
+          "fontWeight": 400,
+          "lineHeight": "{tg.lh.normal}"
+        },
+        "$description": "The working size: meta, counts, secondary lines"
+      },
+      "small-strong": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.1}",
+          "fontWeight": 600,
+          "lineHeight": "{tg.lh.normal}"
+        },
+        "$description": "A monogram"
+      },
+      "label": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.1}",
+          "fontWeight": 600,
+          "lineHeight": "{tg.lh.normal}",
+          "letterSpacing": {
+            "value": 0.06,
+            "unit": "em"
+          },
+          "textTransform": "uppercase"
+        },
+        "$description": "A section label"
+      },
+      "code": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.code}",
+          "fontSize": "{tg.fs.1}",
+          "fontWeight": 400,
+          "lineHeight": "{tg.lh.normal}"
+        },
+        "$description": "Every path, value and name"
+      },
+      "title": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.4}",
+          "fontWeight": 600,
+          "lineHeight": "{tg.lh.tight}"
+        },
+        "$description": "A pane title"
+      },
+      "heading": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.5}",
+          "fontWeight": 600,
+          "lineHeight": "{tg.lh.tight}"
+        },
+        "$description": "The identity card's name"
+      },
+      "control": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.2}",
+          "fontWeight": 500,
+          "lineHeight": "{tg.lh.normal}"
+        },
+        "$description": "A button, a drop zone"
+      },
+      "control-small": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.1}",
+          "fontWeight": 500,
+          "lineHeight": "{tg.lh.normal}"
+        },
+        "$description": "A small control, a table head, a segment"
+      },
+      "tab": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "{tg.font.ui}",
+          "fontSize": "{tg.fs.3}",
+          "fontWeight": 500,
+          "lineHeight": "{tg.lh.normal}"
+        },
+        "$description": "A tab"
+      }
+    },
+    "font": {
+      "$type": "fontFamily",
+      "ui": {
+        "$value": [
+          "Geist",
+          "-apple-system",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$description": "Words"
+      },
+      "code": {
+        "$value": [
+          "Geist Mono",
+          "ui-monospace",
+          "Menlo",
+          "monospace"
+        ],
+        "$description": "Every path, value and name"
+      }
+    },
+    "fs": {
+      "1": {
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$description": "Meta, counts, section labels, code"
+      },
+      "2": {
+        "$value": {
+          "value": 11,
+          "unit": "px"
+        },
+        "$description": "Body, row names, buttons"
+      },
+      "3": {
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "Tabs, section titles"
+      },
+      "4": {
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        },
+        "$description": "A pane title"
+      },
+      "5": {
+        "$value": {
+          "value": 15,
+          "unit": "px"
+        },
+        "$description": "The identity card's name"
+      },
+      "$type": "dimension"
+    },
+    "lh": {
+      "$type": "number",
+      "normal": {
+        "$value": 1.4
+      },
+      "tight": {
+        "$value": 1.2,
+        "$description": "Titles"
+      }
+    },
+    "sp": {
+      "0": {
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        },
+        "$description": "No space: a part that sits flush"
+      },
+      "1": {
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Between a dot and its word, an icon and its label"
+      },
+      "2": {
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "Between items in a row, a card's inner rhythm"
+      },
+      "3": {
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "Pane and card padding, between sections"
+      },
+      "4": {
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$description": "A detail panel's padding"
+      },
+      "6": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$description": "An empty state's breathing room"
+      },
+      "$type": "dimension",
+      "1-5": {
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "Gaps and padding that sit between the 4 and the 8 step"
+      },
+      "inset": {
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$description": "Padding inside a 2 px gutter: the 12 step minus the gutter"
+      }
+    },
+    "h": {
+      "$type": "dimension",
+      "tab": {
+        "$value": {
+          "value": 36,
+          "unit": "px"
+        },
+        "$description": "The tab strip"
+      },
+      "row": {
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$description": "A token, a property, a recent"
+      },
+      "row-dense": {
+        "$value": {
+          "value": 22,
+          "unit": "px"
+        },
+        "$description": "A result row"
+      },
+      "ctl": {
+        "$value": {
+          "value": 26,
+          "unit": "px"
+        },
+        "$description": "Plan, Execute, inputs, selects; also written where an item is as tall as a control"
+      },
+      "ctl-sm": {
+        "$value": {
+          "value": 22,
+          "unit": "px"
+        },
+        "$description": "A button inside a row or a popover"
+      },
+      "bar": {
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$description": "The result surface header"
+      },
+      "status": {
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$description": "The status bar"
+      },
+      "ctl-xs": {
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "A button or a chip inside a row"
+      },
+      "chip-sm": {
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        },
+        "$description": "The small chip"
+      },
+      "row-roomy": {
+        "$value": {
+          "value": 36,
+          "unit": "px"
+        },
+        "$description": "A row of two lines, a source, a command, a template"
+      }
+    },
+    "w": {
+      "$type": "dimension",
+      "spine": {
+        "$value": {
+          "value": 22,
+          "unit": "px"
+        },
+        "$description": "A collapsed column"
+      },
+      "kind": {
+        "$value": {
+          "value": 44,
+          "unit": "px"
+        },
+        "$description": "The kind column of a result row"
+      }
+    },
+    "r": {
+      "1": {
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        },
+        "$description": "Chips and small controls"
+      },
+      "2": {
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "Controls and callouts"
+      },
+      "3": {
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "Cards and popovers"
+      },
+      "$type": "dimension"
+    },
+    "bw": {
+      "0": {
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        },
+        "$description": "No border"
+      },
+      "1": {
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        },
+        "$description": "A hairline"
+      },
+      "2": {
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "A gutter, an active tab, a focus ring"
+      },
+      "$type": "dimension",
+      "ring": {
+        "$value": {
+          "value": 1.5,
+          "unit": "px"
+        },
+        "$description": "A dot's ring, a dashed edge"
+      }
+    },
+    "off": {
+      "$type": "dimension",
+      "out": {
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        },
+        "$description": "A focus ring outside the box"
+      },
+      "in": {
+        "$value": {
+          "value": -2,
+          "unit": "px"
+        },
+        "$description": "A focus ring inside the box, for a part that clips"
+      }
+    },
+    "sz": {
+      "1": {
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "A dot"
+      },
+      "2": {
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "A small swatch, a small icon of a count"
+      },
+      "3": {
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$description": "A small icon"
+      },
+      "4": {
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "An icon, a swatch, a checkbox"
+      },
+      "5": {
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        },
+        "$description": "A large icon"
+      },
+      "6": {
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$description": "An extra large icon"
+      },
+      "7": {
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "A large swatch"
+      },
+      "8": {
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$description": "A monogram"
+      },
+      "9": {
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        },
+        "$description": "A large monogram, a drop zone"
+      },
+      "$type": "dimension"
+    },
+    "clear": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          0,
+          0,
+          0
+        ],
+        "hex": "#000000",
+        "alpha": 0
+      },
+      "$description": "No colour: a border or a fill that takes no space away"
+    },
+    "ring": {
+      "$type": "shadow",
+      "none": {
+        "$value": [
+          {
+            "color": "{tg.clear}",
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            },
+            "inset": true
+          }
+        ],
+        "$description": "No ring: the value a ring is at rest"
+      },
+      "strong": {
+        "$value": [
+          {
+            "color": "{tg.text.1}",
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 1,
+              "unit": "px"
+            },
+            "inset": true
+          }
+        ],
+        "$description": "A second line inside the border, for a pressed toggle"
+      }
+    },
+    "icon": {
+      "$extensions": {
+        "com.toghen": {
+          "css": {
+            "parts": {
+              "tone": {
+                "muted": "[data-tone='muted']",
+                "faint": "[data-tone='faint']"
+              }
+            }
+          }
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{tg.sz.4}"
+      },
+      "sm": {
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{tg.sz.3}"
+        }
+      },
+      "lg": {
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{tg.sz.5}"
+        }
+      },
+      "xl": {
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{tg.sz.6}"
+        }
+      },
+      "muted": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        }
+      },
+      "faint": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        }
+      }
+    },
+    "dot": {
+      "width": {
+        "$type": "dimension",
+        "$value": "{tg.sz.1}"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.sz.1}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.ring}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{tg.clear}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.clear}"
+      },
+      "drifted": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.status.warn.dot}"
+        }
+      },
+      "upstream": {
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.status.warn.dot}"
+        }
+      },
+      "absent": {
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.status.err.dot}"
+        }
+      },
+      "unread": {
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        }
+      },
+      "connected": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.status.ok}"
+        }
+      },
+      "busy": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.accent.bg}"
+        }
+      },
+      "idle": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        }
+      },
+      "error": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.status.err.dot}"
+        }
+      }
+    },
+    "swatch": {
+      "width": {
+        "$type": "dimension",
+        "$value": "{tg.sz.4}"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.sz.4}"
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{tg.r.1}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.1}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{tg.swatch.semantic.edge}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.clear}"
+      },
+      "sm": {
+        "width": {
+          "$type": "dimension",
+          "$value": "{tg.sz.2}"
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.sz.2}"
+        }
+      },
+      "lg": {
+        "width": {
+          "$type": "dimension",
+          "$value": "{tg.sz.7}"
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.sz.7}"
+        }
+      }
+    },
+    "monogram": {
+      "width": {
+        "$type": "dimension",
+        "$value": "{tg.sz.8}"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.sz.8}"
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{tg.r.1}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.hue.text}"
+      },
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.small-strong}"
+      },
+      "lg": {
+        "width": {
+          "$type": "dimension",
+          "$value": "{tg.sz.9}"
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.sz.9}"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{tg.r.2}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.heading}"
+        }
+      }
+    },
+    "divider": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.bw.1}"
+      },
+      "marginBlock": {
+        "$type": "dimension",
+        "$value": "{tg.sp.1}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.line.1}"
+      }
+    },
+    "button": {
+      "outlineColor": {
+        "$type": "color",
+        "$value": "{tg.clear}"
+      },
+      "outlineWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.2}"
+      },
+      "outlineOffset": {
+        "$type": "dimension",
+        "$value": "{tg.off.out}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.bg.raised}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.text.1}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{tg.line.strong}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.1}"
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{tg.r.2}"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.h.ctl}"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "{tg.sp.3}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{tg.sp.1}"
+      },
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.control}"
+      },
+      "cursor": {
+        "$type": "string",
+        "$value": "pointer"
+      },
+      "hover": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.hover}"
+        }
+      },
+      "pressed": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.pressed}"
+        }
+      },
+      "focus": {
+        "outlineColor": {
+          "$type": "color",
+          "$value": "{tg.accent.bg}"
+        }
+      },
+      "disabled": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.raised}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.line.1}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "default"
+        }
+      },
+      "primary": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.accent.bg}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.on-accent}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "hover": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.accent.bg-hover}"
+          }
+        },
+        "pressed": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.accent.bg-pressed}"
+          }
+        },
+        "disabled": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.sunken}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.3}"
+          },
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.line.1}"
+          }
+        }
+      },
+      "quiet": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        },
+        "hover": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.hover}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.1}"
+          }
+        },
+        "pressed": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.pressed}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.1}"
+          }
+        },
+        "disabled": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.3}"
+          },
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        }
+      },
+      "link": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.accent.text}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.0}"
+        },
+        "textDecoration": {
+          "$type": "string",
+          "$value": "none"
+        },
+        "hover": {
+          "textDecoration": {
+            "$type": "string",
+            "$value": "underline"
+          },
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        },
+        "pressed": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        },
+        "disabled": {
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.3}"
+          },
+          "textDecoration": {
+            "$type": "string",
+            "$value": "none"
+          },
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          },
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        }
+      },
+      "sm": {
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.h.ctl-sm}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.2}"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{tg.r.1}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.control-small}"
+        }
+      },
+      "xs": {
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.h.ctl-xs}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.1-5}"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{tg.r.1}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.control-small}"
+        }
+      }
+    },
+    "field": {
+      "$extensions": {
+        "com.toghen": {
+          "css": {
+            "parts": {
+              "focus": {
+                "focus": ":has(> input:focus-visible)"
+              },
+              "availability": {
+                "disabled": ":has(> input:is(:disabled, [aria-disabled='true']))"
+              }
+            }
+          }
+        }
+      },
+      "outlineColor": {
+        "$type": "color",
+        "$value": "{tg.clear}"
+      },
+      "outlineWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.2}"
+      },
+      "outlineOffset": {
+        "$type": "dimension",
+        "$value": "{tg.off.out}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.bg.sunken}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.text.1}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{tg.line.strong}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.1}"
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{tg.r.2}"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.h.ctl}"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "{tg.sp.2}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{tg.sp.1-5}"
+      },
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.body}"
+      },
+      "cursor": {
+        "$type": "string",
+        "$value": "text"
+      },
+      "focus": {
+        "outlineColor": {
+          "$type": "color",
+          "$value": "{tg.accent.bg}"
+        }
+      },
+      "disabled": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.sunken}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.line.1}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "default"
+        }
+      },
+      "code": {
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.code}"
+        }
+      },
+      "invalid": {
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.status.err.dot}"
+        },
+        "disabled": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.status.err.dot}"
+          }
+        }
+      },
+      "placeholder": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        }
+      }
+    },
+    "select": {
+      "outlineColor": {
+        "$type": "color",
+        "$value": "{tg.clear}"
+      },
+      "outlineWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.2}"
+      },
+      "outlineOffset": {
+        "$type": "dimension",
+        "$value": "{tg.off.out}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.bg.raised}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.text.1}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{tg.line.strong}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.1}"
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{tg.r.2}"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.h.ctl}"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "{tg.sp.1-5}"
+      },
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.body}"
+      },
+      "cursor": {
+        "$type": "string",
+        "$value": "pointer"
+      },
+      "hover": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.hover}"
+        }
+      },
+      "focus": {
+        "outlineColor": {
+          "$type": "color",
+          "$value": "{tg.accent.bg}"
+        }
+      },
+      "disabled": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.sunken}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.line.1}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "default"
+        }
+      },
+      "sm": {
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.h.ctl-sm}"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{tg.r.1}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.small}"
+        }
+      }
+    },
+    "checkbox": {
+      "$extensions": {
+        "com.toghen": {
+          "css": {
+            "parts": {
+              "selection": {
+                "selected": ":has(> input:checked)"
+              },
+              "focus": {
+                "focus": ":has(> input:focus-visible)"
+              },
+              "availability": {
+                "disabled": ":has(> input:is(:disabled, [aria-disabled='true']))"
+              }
+            }
+          }
+        }
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.text.2}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{tg.sp.1}"
+      },
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.small}"
+      },
+      "cursor": {
+        "$type": "string",
+        "$value": "pointer"
+      },
+      "focus": {
+        "input": {
+          "outlineColor": {
+            "$type": "color",
+            "$value": "{tg.accent.bg}"
+          }
+        }
+      },
+      "disabled": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "default"
+        },
+        "input": {
+          "accentColor": {
+            "$type": "color",
+            "$value": "{tg.text.3}"
+          }
+        }
+      },
+      "boxed": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.card}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.1}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.line.strong}"
+        },
+        "borderWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.1}"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{tg.r.2}"
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.h.ctl}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.2}"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{tg.sp.1-5}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.control-small}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "pointer"
+        },
+        "selected": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.selected}"
+          },
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.accent.bg}"
+          }
+        },
+        "hover": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.hover}"
+          }
+        },
+        "disabled": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.card}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.3}"
+          },
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.line.1}"
+          },
+          "cursor": {
+            "$type": "string",
+            "$value": "default"
+          }
+        }
+      },
+      "input": {
+        "outlineColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "outlineWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.2}"
+        },
+        "outlineOffset": {
+          "$type": "dimension",
+          "$value": "{tg.off.out}"
+        },
+        "width": {
+          "$type": "dimension",
+          "$value": "{tg.sz.4}"
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.sz.4}"
+        },
+        "accentColor": {
+          "$type": "color",
+          "$value": "{tg.accent.bg}"
+        }
+      }
+    },
+    "chip": {
+      "$extensions": {
+        "com.toghen": {
+          "css": {
+            "parts": {
+              "tone": {
+                "warn": "[data-tone='warn']",
+                "err": "[data-tone='err']",
+                "ok": "[data-tone='ok']"
+              }
+            }
+          }
+        }
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.bg.sunken}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.text.1}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{tg.line.1}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.1}"
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{tg.r.1}"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.h.ctl-xs}"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "{tg.sp.1-5}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{tg.sp.1}"
+      },
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.small}"
+      },
+      "sm": {
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.h.chip-sm}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.1}"
+        }
+      },
+      "warn": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.status.warn.bg}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.status.warn.text}"
+        },
+        "selected": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        },
+        "hover": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        },
+        "pressed": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        },
+        "disabled": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        }
+      },
+      "err": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.status.err.bg}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.status.err.text}"
+        },
+        "selected": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        },
+        "hover": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        },
+        "pressed": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        },
+        "disabled": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          }
+        }
+      },
+      "ok": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.status.ok}"
+        }
+      },
+      "code": {
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.code}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        },
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.card}"
+        }
+      },
+      "toggle": {
+        "outlineColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "outlineWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.2}"
+        },
+        "outlineOffset": {
+          "$type": "dimension",
+          "$value": "{tg.off.out}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "pointer"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.line.1}"
+        },
+        "boxShadow": {
+          "$type": "shadow",
+          "$value": "{tg.ring.none}"
+        },
+        "selected": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.text.1}"
+          },
+          "boxShadow": {
+            "$type": "shadow",
+            "$value": "{tg.ring.strong}"
+          }
+        },
+        "hover": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.line.strong}"
+          }
+        },
+        "pressed": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.text.2}"
+          }
+        },
+        "focus": {
+          "outlineColor": {
+            "$type": "color",
+            "$value": "{tg.accent.bg}"
+          }
+        },
+        "disabled": {
+          "borderColor": {
+            "$type": "color",
+            "$value": "{tg.line.1}"
+          },
+          "boxShadow": {
+            "$type": "shadow",
+            "$value": "{tg.ring.none}"
+          },
+          "cursor": {
+            "$type": "string",
+            "$value": "default"
+          }
+        }
+      }
+    },
+    "segmented": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.h.ctl-sm}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.bg.card}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{tg.line.strong}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.1}"
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{tg.r.2}"
+      },
+      "item": {
+        "outlineColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "outlineWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.2}"
+        },
+        "outlineOffset": {
+          "$type": "dimension",
+          "$value": "{tg.off.in}"
+        },
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.card}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.1}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.2}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.control-small}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "pointer"
+        },
+        "boxShadow": {
+          "$type": "shadow",
+          "$value": "{tg.ring.none}"
+        },
+        "selected": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.text.1}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{tg.bg.card}"
+          }
+        },
+        "hover": {
+          "boxShadow": {
+            "$type": "shadow",
+            "$value": "{tg.wash.hover}"
+          }
+        },
+        "pressed": {
+          "boxShadow": {
+            "$type": "shadow",
+            "$value": "{tg.wash.pressed}"
+          }
+        },
+        "focus": {
+          "outlineColor": {
+            "$type": "color",
+            "$value": "{tg.accent.bg}"
+          }
+        },
+        "disabled": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.card}"
+          },
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.3}"
+          },
+          "boxShadow": {
+            "$type": "shadow",
+            "$value": "{tg.ring.none}"
+          },
+          "cursor": {
+            "$type": "string",
+            "$value": "default"
+          }
+        }
+      }
+    },
+    "tabs": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.h.tab}"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "{tg.sp.2}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.bg.card}"
+      },
+      "borderBottomColor": {
+        "$type": "color",
+        "$value": "{tg.line.1}"
+      },
+      "borderBottomWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.1}"
+      },
+      "tab": {
+        "outlineColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "outlineWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.2}"
+        },
+        "outlineOffset": {
+          "$type": "dimension",
+          "$value": "{tg.off.in}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        },
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "borderBottomColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "borderBottomWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.2}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.1}"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{tg.sp.1-5}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.tab}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "pointer"
+        },
+        "selected": {
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.1}"
+          },
+          "borderBottomColor": {
+            "$type": "color",
+            "$value": "{tg.accent.bg}"
+          }
+        },
+        "hover": {
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.1}"
+          }
+        },
+        "pressed": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.hover}"
+          }
+        },
+        "focus": {
+          "outlineColor": {
+            "$type": "color",
+            "$value": "{tg.accent.bg}"
+          }
+        },
+        "disabled": {
+          "color": {
+            "$type": "color",
+            "$value": "{tg.text.3}"
+          },
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.clear}"
+          },
+          "cursor": {
+            "$type": "string",
+            "$value": "default"
+          }
+        }
+      }
+    },
+    "callout": {
+      "$extensions": {
+        "com.toghen": {
+          "css": {
+            "parts": {
+              "tone": {
+                "warn": "[data-tone='warn']",
+                "err": "[data-tone='err']"
+              }
+            }
+          }
+        }
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.status.info.bg}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.text.1}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{tg.line.1}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.1}"
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{tg.r.2}"
+      },
+      "paddingBlock": {
+        "$type": "dimension",
+        "$value": "{tg.sp.2}"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "{tg.sp.3}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{tg.sp.2}"
+      },
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.body}"
+      },
+      "warn": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.status.warn.bg}"
+        }
+      },
+      "err": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.status.err.bg}"
+        },
+        "mark": {
+          "color": {
+            "$type": "color",
+            "$value": "{tg.status.err.dot}"
+          }
+        }
+      },
+      "sm": {
+        "borderWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.0}"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{tg.r.1}"
+        },
+        "paddingBlock": {
+          "$type": "dimension",
+          "$value": "{tg.sp.1-5}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.2}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.small}"
+        },
+        "title": {
+          "font": {
+            "$type": "typography",
+            "$value": "{tg.text.small}"
+          }
+        }
+      },
+      "mark": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.accent.text}"
+        }
+      },
+      "title": {
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.body-strong}"
+        }
+      },
+      "line": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        }
+      }
+    },
+    "card": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{tg.sp.1-5}"
+      },
+      "label": {
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.label}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        }
+      },
+      "note": {
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.small}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        }
+      },
+      "body": {
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.3}"
+        },
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.card}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.line.1}"
+        },
+        "borderWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.1}"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{tg.r.3}"
+        },
+        "flush": {
+          "paddingInline": {
+            "$type": "dimension",
+            "$value": "{tg.sp.0}"
+          }
+        }
+      }
+    },
+    "dropzone": {
+      "outlineColor": {
+        "$type": "color",
+        "$value": "{tg.clear}"
+      },
+      "outlineWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.2}"
+      },
+      "outlineOffset": {
+        "$type": "dimension",
+        "$value": "{tg.off.out}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.bg.card}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.text.1}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{tg.line.strong}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.ring}"
+      },
+      "borderRadius": {
+        "$type": "dimension",
+        "$value": "{tg.r.2}"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "{tg.sz.9}"
+      },
+      "paddingInline": {
+        "$type": "dimension",
+        "$value": "{tg.sp.3}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{tg.sp.2}"
+      },
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.control}"
+      },
+      "cursor": {
+        "$type": "string",
+        "$value": "pointer"
+      },
+      "hover": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.hover}"
+        }
+      },
+      "pressed": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.pressed}"
+        }
+      },
+      "focus": {
+        "outlineColor": {
+          "$type": "color",
+          "$value": "{tg.accent.bg}"
+        }
+      },
+      "disabled": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.card}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        },
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.line.1}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "default"
+        }
+      },
+      "sm": {
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.h.ctl-sm}"
+        },
+        "borderWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.1}"
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{tg.r.1}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.2}"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{tg.sp.1-5}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.control-small}"
+        }
+      },
+      "over": {
+        "borderColor": {
+          "$type": "color",
+          "$value": "{tg.accent.bg}"
+        },
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.selected}"
+        },
+        "hover": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.selected}"
+          }
+        },
+        "pressed": {
+          "backgroundColor": {
+            "$type": "color",
+            "$value": "{tg.bg.selected}"
+          }
+        }
+      }
+    },
+    "list": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{tg.sp.0}"
+      }
+    },
+    "row": {
+      "$extensions": {
+        "com.toghen": {
+          "css": {
+            "parts": {
+              "disclosure": {
+                "open": ":has(> [data-part='summary'][aria-expanded='true'])"
+              },
+              "focus": {
+                "focus": ":is(:focus-visible, :has(> [data-part='summary']:focus-visible))"
+              },
+              "interaction": {
+                "interactive": ":is([tabindex], :has(> [data-part='summary']))"
+              },
+              "tone": {
+                "warn": "[data-tone='warn']",
+                "err": "[data-tone='err']"
+              }
+            }
+          }
+        }
+      },
+      "minHeight": {
+        "$type": "dimension",
+        "$value": "{tg.h.row}"
+      },
+      "paddingInlineStart": {
+        "$type": "dimension",
+        "$value": "{tg.sp.inset}"
+      },
+      "paddingInlineEnd": {
+        "$type": "dimension",
+        "$value": "{tg.sp.3}"
+      },
+      "borderLeftWidth": {
+        "$type": "dimension",
+        "$value": "{tg.bw.2}"
+      },
+      "borderLeftColor": {
+        "$type": "color",
+        "$value": "{tg.clear}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{tg.sp.2}"
+      },
+      "backgroundColor": {
+        "$type": "color",
+        "$value": "{tg.clear}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.text.1}"
+      },
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.body}"
+      },
+      "selected": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.selected}"
+        }
+      },
+      "open": {
+        "backgroundColor": {
+          "$type": "color",
+          "$value": "{tg.bg.sunken}"
+        },
+        "borderLeftColor": {
+          "$type": "color",
+          "$value": "{tg.accent.bg}"
+        }
+      },
+      "interactive": {
+        "outlineColor": {
+          "$type": "color",
+          "$value": "{tg.clear}"
+        },
+        "outlineWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.2}"
+        },
+        "outlineOffset": {
+          "$type": "dimension",
+          "$value": "{tg.off.in}"
+        },
+        "cursor": {
+          "$type": "string",
+          "$value": "pointer"
+        },
+        "boxShadow": {
+          "$type": "shadow",
+          "$value": "{tg.ring.none}"
+        },
+        "hover": {
+          "boxShadow": {
+            "$type": "shadow",
+            "$value": "{tg.wash.hover}"
+          }
+        },
+        "pressed": {
+          "boxShadow": {
+            "$type": "shadow",
+            "$value": "{tg.wash.pressed}"
+          }
+        },
+        "focus": {
+          "outlineColor": {
+            "$type": "color",
+            "$value": "{tg.accent.bg}"
+          }
+        },
+        "disabled": {
+          "boxShadow": {
+            "$type": "shadow",
+            "$value": "{tg.ring.none}"
+          },
+          "cursor": {
+            "$type": "string",
+            "$value": "default"
+          }
+        }
+      },
+      "dense": {
+        "minHeight": {
+          "$type": "dimension",
+          "$value": "{tg.h.row-dense}"
+        }
+      },
+      "roomy": {
+        "minHeight": {
+          "$type": "dimension",
+          "$value": "{tg.h.row-roomy}"
+        }
+      },
+      "warn": {
+        "borderLeftColor": {
+          "$type": "color",
+          "$value": "{tg.status.warn.dot}"
+        },
+        "open": {
+          "borderLeftColor": {
+            "$type": "color",
+            "$value": "{tg.status.warn.dot}"
+          }
+        }
+      },
+      "err": {
+        "borderLeftColor": {
+          "$type": "color",
+          "$value": "{tg.status.err.dot}"
+        },
+        "open": {
+          "borderLeftColor": {
+            "$type": "color",
+            "$value": "{tg.status.err.dot}"
+          }
+        }
+      },
+      "leading": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.3}"
+        }
+      },
+      "value": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        }
+      },
+      "trailing": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        }
+      },
+      "detail": {
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        },
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.small}"
+        },
+        "paddingBlock": {
+          "$type": "dimension",
+          "$value": "{tg.sp.2}"
+        },
+        "paddingInlineStart": {
+          "$type": "dimension",
+          "$value": "{tg.sp.6}"
+        }
+      }
+    },
+    "table": {
+      "font": {
+        "$type": "typography",
+        "$value": "{tg.text.code}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{tg.text.1}"
+      },
+      "dense": {
+        "cell": {
+          "height": {
+            "$type": "dimension",
+            "$value": "{tg.h.row-dense}"
+          }
+        }
+      },
+      "roomy": {
+        "cell": {
+          "height": {
+            "$type": "dimension",
+            "$value": "{tg.h.row-roomy}"
+          }
+        }
+      },
+      "head": {
+        "font": {
+          "$type": "typography",
+          "$value": "{tg.text.control-small}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{tg.text.2}"
+        },
+        "borderBottomColor": {
+          "$type": "color",
+          "$value": "{tg.line.1}"
+        },
+        "borderBottomWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.1}"
+        }
+      },
+      "cell": {
+        "$extensions": {
+          "com.toghen": {
+            "css": {
+              "parts": {
+                "tone": {
+                  "warn": "[data-tone='warn']",
+                  "err": "[data-tone='err']"
+                }
+              }
+            }
+          }
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "{tg.h.row}"
+        },
+        "paddingInline": {
+          "$type": "dimension",
+          "$value": "{tg.sp.2}"
+        },
+        "borderBottomColor": {
+          "$type": "color",
+          "$value": "{tg.line.1}"
+        },
+        "borderBottomWidth": {
+          "$type": "dimension",
+          "$value": "{tg.bw.1}"
+        },
+        "warn": {
+          "color": {
+            "$type": "color",
+            "$value": "{tg.status.warn.text}"
+          }
+        },
+        "err": {
+          "color": {
+            "$type": "color",
+            "$value": "{tg.status.err.text}"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+/*
+ * list: `<tg-list>` holding `<tg-row>`s that are its options. One of them is
+ * chosen (`aria-selected="true"` tints it, from the row's own states); the
+ * element sets the listbox and option roles, keeps one option in the tab order,
+ * and moves with the arrow keys, Home and End. The list lays its options out in
+ * a column and draws nothing of its own.
+ */
+
+tg-list {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  @apply --tg-list;
+}
+
+tg-list[aria-orientation='horizontal'] {
+  flex-direction: row;
+}

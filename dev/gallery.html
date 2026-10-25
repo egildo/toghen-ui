@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Toghen UI gallery</title>
+    <link rel="stylesheet" href="/dist/toghen-ui.css" />
+    <style>
+      /* The gallery is a consumer: its own rules come after the design system's, unlayered. */
+      body {
+        margin: 0;
+        padding: var(--tg-sp-4) var(--tg-sp-4) var(--tg-sp-6);
+      }
+      .page {
+        max-width: 980px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--tg-sp-6);
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: var(--tg-sp-3);
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        padding: var(--tg-sp-2) 0;
+        background: var(--tg-bg-base);
+      }
+      .bar h1 {
+        margin: 0;
+        font: var(--tg-text-title);
+      }
+      .bar .push {
+        margin-inline-start: auto;
+      }
+      nav.toc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--tg-sp-1) var(--tg-sp-2);
+      }
+      section.component {
+        display: flex;
+        flex-direction: column;
+        gap: var(--tg-sp-2);
+      }
+      section.component > h2 {
+        margin: 0;
+        font: var(--tg-text-heading);
+      }
+      section.component > p {
+        margin: 0;
+        color: var(--tg-text-2);
+        max-width: 70ch;
+      }
+      .cases {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
+        gap: var(--tg-sp-3) var(--tg-sp-4);
+        align-items: start;
+      }
+      .cases.wide {
+        grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
+      }
+      .case {
+        display: flex;
+        flex-direction: column;
+        gap: var(--tg-sp-1-5);
+        min-width: 0;
+      }
+      .case > .caption {
+        font: var(--tg-text-small);
+        color: var(--tg-text-3);
+      }
+      .case > .specimen {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--tg-sp-2);
+        min-width: 0;
+      }
+      .case > .specimen.block {
+        display: block;
+      }
+      .island {
+        padding: var(--tg-sp-3);
+        border-radius: var(--tg-r-3);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--tg-sp-2);
+        align-items: center;
+      }
+      table.map {
+        border-collapse: collapse;
+      }
+      .icons {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(210px, 100%), 1fr));
+        gap: var(--tg-sp-1) var(--tg-sp-3);
+      }
+      .icons > div {
+        display: flex;
+        align-items: center;
+        gap: var(--tg-sp-2);
+        height: var(--tg-h-row);
+        border-bottom: 1px solid var(--tg-line-1);
+      }
+      .icons .tg-icon {
+        font-size: 16px;
+      }
+      .icons code {
+        font: var(--tg-text-code);
+        color: var(--tg-text-2);
+      }
+      .events {
+        font: var(--tg-text-code);
+        color: var(--tg-text-2);
+        min-height: 1.4em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page" id="page">
+      <div class="bar">
+        <h1>Toghen UI</h1>
+        <tg-segmented aria-label="Theme" id="theme" class="push">
+          <button type="button" data-value="light" aria-checked="true">Light</button>
+          <button type="button" data-value="dark">Dark</button>
+        </tg-segmented>
+      </div>
+      <nav class="toc" id="toc" aria-label="Components"></nav>
+    </div>
+    <script type="module" src="./gallery.js"></script>
+  </body>
+</html>

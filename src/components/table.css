@@ -1,0 +1,26 @@
+/*
+ * table: `<table class="tg-table">`. Two or more columns of names and values, in
+ * the code face; a head row of `<th>`s is optional. A key and its value, with
+ * nothing to sort, is a two-column table.
+ *
+ *   data-density  regular (the default, 28 px), dense (22), roomy (36)
+ *   data-tone     warn, err: on a `<td>`, colours its words
+ */
+
+.tg-table {
+  width: 100%;
+  border-collapse: collapse;
+  @apply --tg-table;
+}
+
+.tg-table :is(th, td) {
+  border-bottom-style: solid;
+  text-align: left;
+  white-space: nowrap;
+  @apply --tg-table-cell;
+}
+
+.tg-table th {
+  @apply --tg-table-head;
+}
+

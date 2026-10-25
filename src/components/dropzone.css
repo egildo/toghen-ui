@@ -1,0 +1,25 @@
+/*
+ * dropzone: `<button class="tg-dropzone">`. A dashed target that also works as a
+ * button: pick a file or drop one on it.
+ *
+ *   data-size  md (the default, a full-width bar), sm (an inline chip)
+ *   data-over  set by script while something is dragged over it
+ */
+
+.tg-dropzone {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding-block: 0;
+  border-style: dashed;
+  outline-style: solid;
+  text-align: left;
+  @apply --tg-dropzone;
+}
+
+.tg-dropzone[data-size='sm'] {
+  display: inline-flex;
+  width: auto;
+}
+

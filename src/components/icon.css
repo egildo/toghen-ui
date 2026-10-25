@@ -1,0 +1,29 @@
+/*
+ * icon: `<i class="tg-icon ph ph-<name>" aria-hidden="true">`, the Phosphor icon
+ * font (regular weight). The build writes one `.ph-<name>::before` rule for
+ * each icon in `src/icons.js`, at the marker below.
+ *
+ * Size is `data-size` (sm, lg, xl; the default is the working 12 px); colour is
+ * `data-tone` (muted, faint), or inherited from the element it sits in.
+ */
+
+.ph {
+  font-family: 'Phosphor';
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  font-feature-settings: 'liga';
+  speak: never;
+  -webkit-font-smoothing: antialiased;
+}
+
+.tg-icon {
+  display: inline-block;
+  flex: none;
+  line-height: 1;
+  @apply --tg-icon;
+}
+
+/*PHOSPHOR_ICONS*/

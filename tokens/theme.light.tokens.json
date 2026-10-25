@@ -1,0 +1,437 @@
+{
+  "tg": {
+    "bg": {
+      "$type": "color",
+      "base": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.949,
+            0.949,
+            0.949
+          ],
+          "hex": "#f2f2f2"
+        }
+      },
+      "card": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#ffffff"
+        }
+      },
+      "raised": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#ffffff"
+        }
+      },
+      "sunken": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9647,
+            0.9647,
+            0.9647
+          ],
+          "hex": "#f6f6f6"
+        }
+      },
+      "hover": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.9412,
+            0.9412
+          ],
+          "hex": "#f0f0f0"
+        }
+      },
+      "selected": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0471,
+            0.549,
+            0.9137
+          ],
+          "hex": "#0c8ce9",
+          "alpha": 0.1
+        }
+      },
+      "pressed": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.902,
+            0.902,
+            0.902
+          ],
+          "hex": "#e6e6e6"
+        },
+        "$description": "An element while pressed"
+      }
+    },
+    "line": {
+      "1": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9098,
+            0.9098,
+            0.9098
+          ],
+          "hex": "#e8e8e8"
+        }
+      },
+      "$type": "color",
+      "strong": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8314,
+            0.8314,
+            0.8314
+          ],
+          "hex": "#d4d4d4"
+        }
+      }
+    },
+    "text": {
+      "1": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1176,
+            0.1176,
+            0.1176
+          ],
+          "hex": "#1e1e1e"
+        }
+      },
+      "2": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4196,
+            0.4196,
+            0.4196
+          ],
+          "hex": "#6b6b6b"
+        }
+      },
+      "3": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6392,
+            0.6392,
+            0.6392
+          ],
+          "hex": "#a3a3a3"
+        }
+      },
+      "$type": "color"
+    },
+    "accent": {
+      "$type": "color",
+      "text": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0392,
+            0.4353,
+            0.7216
+          ],
+          "hex": "#0a6fb8"
+        }
+      }
+    },
+    "status": {
+      "$type": "color",
+      "ok": {
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0863,
+            0.6392,
+            0.2902
+          ],
+          "hex": "#16a34a"
+        }
+      },
+      "warn": {
+        "dot": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.851,
+              0.4667,
+              0.0235
+            ],
+            "hex": "#d97706"
+          }
+        },
+        "text": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6588,
+              0.3529,
+              0
+            ],
+            "hex": "#a85a00"
+          }
+        },
+        "bg": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              1,
+              0.9647,
+              0.898
+            ],
+            "hex": "#fff6e5"
+          }
+        }
+      },
+      "err": {
+        "dot": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8627,
+              0.149,
+              0.149
+            ],
+            "hex": "#dc2626"
+          }
+        },
+        "text": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.7529,
+              0.149,
+              0.1647
+            ],
+            "hex": "#c0262a"
+          }
+        },
+        "bg": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9922,
+              0.9255,
+              0.9255
+            ],
+            "hex": "#fdecec"
+          }
+        }
+      },
+      "info": {
+        "bg": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9176,
+              0.9569,
+              0.9922
+            ],
+            "hex": "#eaf4fd"
+          }
+        }
+      }
+    },
+    "swatch": {
+      "semantic": {
+        "$type": "color",
+        "edge": {
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "hex": "#000000",
+            "alpha": 0.12
+          }
+        }
+      }
+    },
+    "shadow": {
+      "pop": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "hex": "#000000",
+              "alpha": 0.14
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 16,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "hex": "#000000",
+              "alpha": 0.06
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 1,
+              "unit": "px"
+            }
+          }
+        ]
+      }
+    },
+    "hue": {
+      "text": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ],
+          "hex": "#ffffff"
+        },
+        "$description": "Letters on a hue-coloured monogram"
+      },
+      "saturation": {
+        "$type": "number",
+        "$value": 55,
+        "$description": "The saturation of a hue-coloured fill"
+      },
+      "lightness": {
+        "$type": "number",
+        "$value": 40,
+        "$description": "The lightness of a hue-coloured fill"
+      }
+    },
+    "wash": {
+      "$type": "shadow",
+      "hover": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "hex": "#000000",
+              "alpha": 0.04
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 999,
+              "unit": "px"
+            },
+            "inset": true
+          }
+        ],
+        "$description": "A tint laid over whatever colour is under it, so a selected element keeps its selection under the pointer"
+      },
+      "pressed": {
+        "$type": "shadow",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "hex": "#000000",
+              "alpha": 0.08
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 0,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 999,
+              "unit": "px"
+            },
+            "inset": true
+          }
+        ],
+        "$description": "The same, while pressed"
+      }
+    }
+  }
+}

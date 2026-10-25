@@ -1,0 +1,30 @@
+/*
+ * Geist, Geist Mono and Phosphor, inlined. A window may allow no network (the
+ * Figma plugin's does not), so a font link would load nothing; the build
+ * replaces each url with the font file as a data URI. One variable file per
+ * Geist family covers every weight the components use; Phosphor is the regular
+ * weight.
+ */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url(GEIST_SANS) format('woff2');
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url(GEIST_MONO) format('woff2');
+}
+
+@font-face {
+  font-family: 'Phosphor';
+  font-style: normal;
+  font-weight: normal;
+  font-display: block;
+  src: url(PHOSPHOR) format('woff2');
+}

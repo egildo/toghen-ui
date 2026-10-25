@@ -1,0 +1,38 @@
+/*
+ * The design system's stylesheet, in three layers. The token layer declares; the
+ * base and the components read. A component's states and variants are parts of
+ * its token group, nested in the component's own rule by `@apply`, so they sit in
+ * the component layer. An application's own rules come after this sheet,
+ * unlayered, and can adjust a component when they must.
+ *
+ * The mixins are written once, at the top level, outside every layer: the
+ * polyfill ignores a layered `@mixin`, and `@apply` brings a mixin's contents
+ * into the layer of the rule that applies it. The build inlines each `@import`
+ * as a block of its layer.
+ */
+@layer tg.tokens, tg.base, tg.components;
+
+@toghen mixins toghen-plugin;
+
+@import './tokens.css' layer(tg.tokens);
+@import './fonts.css' layer(tg.base);
+@import './base.css' layer(tg.base);
+
+@import './components/icon.css' layer(tg.components);
+@import './components/dot.css' layer(tg.components);
+@import './components/swatch.css' layer(tg.components);
+@import './components/monogram.css' layer(tg.components);
+@import './components/divider.css' layer(tg.components);
+@import './components/button.css' layer(tg.components);
+@import './components/field.css' layer(tg.components);
+@import './components/select.css' layer(tg.components);
+@import './components/checkbox.css' layer(tg.components);
+@import './components/chip.css' layer(tg.components);
+@import './components/segmented.css' layer(tg.components);
+@import './components/tabs.css' layer(tg.components);
+@import './components/callout.css' layer(tg.components);
+@import './components/card.css' layer(tg.components);
+@import './components/dropzone.css' layer(tg.components);
+@import './components/row.css' layer(tg.components);
+@import './components/list.css' layer(tg.components);
+@import './components/table.css' layer(tg.components);

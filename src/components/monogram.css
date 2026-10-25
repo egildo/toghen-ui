@@ -1,0 +1,23 @@
+/*
+ * monogram: `<span class="tg-monogram" style="--hue: 210">AB</span>`. The hue is
+ * data (a hash of a name), so the page sets it; saturation and lightness are
+ * tokens that change with the theme, so a light and a dark monogram of one hue
+ * both read. `data-size` is md (the default) or lg.
+ */
+
+.tg-monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  /*
+   * A colour from a data value and tokens is composed in the rule: the hue is a property the page sets
+   * on the element, and the two tokens complete it. It cannot be a token, since a property declared at
+   * the root would read the hue at the root.
+   */
+  background-color: hsl(
+    var(--hue, 210) calc(toghen(toghen-plugin.tg.hue.saturation) * 1%) calc(toghen(toghen-plugin.tg.hue.lightness) * 1%)
+  );
+  @apply --tg-monogram;
+}
+

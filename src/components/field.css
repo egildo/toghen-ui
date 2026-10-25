@@ -1,0 +1,40 @@
+/*
+ * field: `<label class="tg-field"><i class="tg-icon ph ph-magnifying-glass"></i><input></label>`.
+ * The label is the box and the input is its text; an icon before the input is
+ * its leading mark.
+ *
+ *   data-variant  code: the input holds a path, a value or a name
+ *   aria-invalid  on the input (or the label) draws the error border
+ *
+ * A field's focus and disabled belong to its input, not to the label: the
+ * group spells them `:has(> input…)`.
+ */
+
+.tg-field {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  border-style: solid;
+  outline-style: solid;
+  @apply --tg-field;
+}
+
+.tg-field > input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  outline: none;
+}
+
+.tg-field > input::placeholder {
+  @apply --tg-field-placeholder;
+}
+
+.tg-field[data-variant='code'] {
+  flex: 1;
+}

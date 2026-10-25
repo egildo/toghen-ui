@@ -1,0 +1,39 @@
+/*
+ * card: `<tg-card>` holding an optional `[data-part="label"]` and a
+ * `[data-part="body"]`. The label sits above the box, in the small uppercase
+ * face, with an optional `[data-part="note"]` on its right; the box is the
+ * bordered surface. The element wraps loose children in a body, so
+ * `<tg-card>words</tg-card>` is a card too.
+ *
+ * A body that holds rows (`tg-row`, or a `tg-list` of them) has no inline
+ * padding: a row insets its own parts, so the rows run edge to edge and their
+ * padding lines up with where the card's content would have started. No
+ * attribute: the composition decides.
+ */
+
+tg-card {
+  display: flex;
+  flex-direction: column;
+  @apply --tg-card;
+}
+
+tg-card > [data-part='label'] {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  @apply --tg-card-label;
+}
+
+tg-card > [data-part='label'] [data-part='note'] {
+  text-transform: none;
+  letter-spacing: normal;
+  @apply --tg-card-note;
+}
+
+tg-card > [data-part='body'] {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  @apply --tg-card-body;
+}
+
