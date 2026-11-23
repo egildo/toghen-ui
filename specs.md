@@ -157,10 +157,11 @@ The row also reads its minimum height into a private property for its children. 
 
 ## Testing
 
-`pnpm --filter @toghen/ui test` checks three things:
+`pnpm test` checks four things:
 
 - The tokens: the resolver loads and resolves, the vocabulary is in order, the respellings keep the rest, and the structured W3C shapes come out as CSS.
 - The built sheet: no directive or mixin is left in it, the layers are in order, and every state is a part.
 - The custom elements' pure functions, such as the keys and the labels, with `node:test`. No DOM is needed.
+- The package: every export is a file it ships, and a runtime dependency is one `src/` imports.
 
 The look is checked in the gallery and in the plugin's preview.
