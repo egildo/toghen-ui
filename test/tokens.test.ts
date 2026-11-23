@@ -68,6 +68,11 @@ test('a component that reads its states elsewhere respells one entry and keeps t
   // A row opens by its summary, and is interactive with a tabindex or a summary.
   assert.equal(collection.vocabularyAt('tg.row').disclosure.open, ":has(> [data-part='summary'][aria-expanded='true'])");
   assert.equal(collection.vocabularyAt('tg.row').interaction.interactive, ":is([tabindex], :has(> [data-part='summary']))");
+  // In a list a row's summary is the option, so a row is selected by its summary, or by itself where it stands alone.
+  assert.equal(
+    collection.vocabularyAt('tg.row').selection.selected,
+    ":is([aria-selected='true'], :has(> [data-part='summary'][aria-selected='true']))",
+  );
   // Elsewhere the root's spelling stands.
   assert.equal(collection.vocabularyAt('tg.button').disclosure.open, "[aria-expanded='true']");
 });

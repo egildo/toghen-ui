@@ -54,9 +54,8 @@ The tokens are the design system's source. There is no compiled token code. The 
 | `@toghen/ui/elements.js` | The eight custom elements, defined on import. |
 | `@toghen/ui/icons.js` | The icon names and the icon map. |
 | `@toghen/ui/styles.css` | The built stylesheet, `dist/toghen-ui.css`. Run the build first. |
-| `@toghen/ui/build.mjs` | The build as functions, for tests. |
 
-Consumers: the plugin's build reads `styles.css` and bundles `elements.js` and `icons.js`. The plugin's tests call the build.
+Consumers: the plugin's build reads `styles.css` and bundles `elements.js` and `icons.js`, and the plugin's tests read `styles.css`. The build (`scripts/build.mjs`) and the gallery are this repository's tools, run from a checkout: they are not published, and nothing the package ships needs Phosphor's package, whose font the build embeds.
 
 ## Components
 
@@ -115,7 +114,7 @@ A component whose state sits on a child element respells that axis in its own vo
 |---|---|---|
 | `tg.checkbox` | selection, focus, availability | the checkbox's input, `:has(> input …)` |
 | `tg.field` | focus, availability | the field's input, `:has(> input …)` |
-| `tg.row` | disclosure, focus, interaction | the row's summary button |
+| `tg.row` | selection, disclosure, focus, interaction | the row's summary: its button, or in a `tg-list` the option |
 
 The document keeps one spelling per value at the root. A component says where its own states are.
 
@@ -126,7 +125,7 @@ The stylesheet has three layers, in this order: `tg.tokens`, `tg.base`, `tg.comp
 | Layer | Holds | Role |
 |---|---|---|
 | `tg.tokens` | `tokens.css`: every token as a custom property, the defaults and each theme | The only layer that declares. |
-| `tg.base` | `base.css` and `fonts.css`: the page's text and faces, and the `data-text` roles | Reads the tokens. |
+| `tg.base` | `base.css` and `fonts.css`: the page's text and faces, the colour scheme each theme chooses for native controls, and the `data-text` roles | Reads the tokens. |
 | `tg.components` | One stylesheet per component | Reads the tokens. A part re-points a local property on its own element, which the component resets, so a component nested in another starts from its rest. |
 
 An application's rules come after the sheet, unlayered, and can adjust a component when they must.
@@ -158,10 +157,11 @@ The row also reads its minimum height into a private property for its children. 
 
 ## Testing
 
-`pnpm --filter @toghen/ui test` checks three things:
+`pnpm test` checks four things:
 
 - The tokens: the resolver loads and resolves, the vocabulary is in order, the respellings keep the rest, and the structured W3C shapes come out as CSS.
 - The built sheet: no directive or mixin is left in it, the layers are in order, and every state is a part.
 - The custom elements' pure functions, such as the keys and the labels, with `node:test`. No DOM is needed.
+- The package: every export is a file it ships, and a runtime dependency is one `src/` imports.
 
 The look is checked in the gallery and in the plugin's preview.

@@ -34,11 +34,6 @@
     {
       "includes": ["dev/gallery.html"],
       "linter": { "rules": { "a11y": { "useAriaPropsSupportedByRole": "off" } } }
-    },
-    // The purity check is a house-copied script; its local `escape` helper shadows a global but is module-scoped and harmless. Rename in house.
-    {
-      "includes": ["scripts/check-purity.mjs"],
-      "linter": { "rules": { "suspicious": { "noShadowRestrictedNames": "off" } } }
     }
   ]
 }

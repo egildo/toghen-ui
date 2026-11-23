@@ -1,7 +1,9 @@
 /**
  * `<tg-list>`: one row chosen out of several. A listbox (WAI-ARIA Authoring
- * Practices, "Listbox"): the `tg-row`s it holds are its options
- * (`role="option"`, `aria-selected`). One option stays in the tab order (the
+ * Practices, "Listbox"): each `tg-row` it holds is an option, and the option is
+ * the row's summary (`role="option"`, `aria-selected`), which the row makes
+ * around its line, so a control in its trailing part or its detail is not inside
+ * an option. The page hears about the row. One option stays in the tab order (the
  * selected one, else the first); Up and Down move focus (Left and Right when
  * `aria-orientation="horizontal"`), Home and End go to the ends, and a disabled
  * option is passed over.
@@ -30,6 +32,7 @@ define(
           chosen: 'aria-selected',
           pattern: 'list',
           items: ':scope > tg-row',
+          option: (row) => row.querySelector(':scope > [data-part="summary"]') ?? row,
           orientation: 'vertical',
           activates: true,
         });

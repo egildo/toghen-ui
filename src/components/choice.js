@@ -6,7 +6,9 @@
  *
  * Light DOM: the items are the host's own children (`<button>`s, or `<tg-row>`s
  * in a list), and the application may replace them at any time, so the host
- * listens by delegation and re-reads its items after a change.
+ * listens by delegation and re-reads its items after a change. An item may hold
+ * its option rather than be it (a row's summary): the option carries the role,
+ * the chosen state and the tab stop, and the events name the item.
  *
  * A list's items are not native buttons, so the host also handles their keys
  * (Space chooses, Enter activates: `activates`), and a click on an item that is
@@ -23,19 +25,30 @@ import { nextIndex, optionAction, tabStop } from '../keys.js';
  *   chosen: 'aria-selected' | 'aria-checked',
  *   pattern: 'tabs' | 'radio' | 'list',
  *   items?: string,
+ *   option?: (item: HTMLElement) => HTMLElement,
  *   orientation?: 'horizontal' | 'vertical',
  *   activates?: boolean,
- * }} options `items` is the selector of the items (default the host's own buttons); `orientation` is
- * the one used when the host does not say (`aria-orientation`); `activates` makes Enter and a second
- * click dispatch `tg-activate`.
+ * }} options `items` is the selector of the items (default the host's own buttons); `option` is the
+ * element of an item that is the option (default the item); `orientation` is the one used when the
+ * host does not say (`aria-orientation`); `activates` makes Enter and a second click dispatch `tg-activate`.
  * @returns {() => void} detaches everything
  */
 export function attachChoice(
   host,
-  { role, itemRole, chosen, pattern, items: selector = ':scope > button', orientation: fallback = 'horizontal', activates = false },
+  {
+    role,
+    itemRole,
+    chosen,
+    pattern,
+    items: selector = ':scope > button',
+    option: optionOf = (item) => item,
+    orientation: fallback = 'horizontal',
+    activates = false,
+  },
 ) {
   const items = () => [...host.querySelectorAll(selector)];
-  const isEnabled = (item) => item.getAttribute('aria-disabled') !== 'true' && !item.disabled;
+  const isEnabled = (item) => ![item, optionOf(item)].some((node) => node.getAttribute('aria-disabled') === 'true' || node.disabled);
+  const isChosen = (item) => optionOf(item).getAttribute(chosen) === 'true';
   const orientation = () => ((host.getAttribute('aria-orientation') ?? fallback) === 'vertical' ? 'vertical' : 'horizontal');
   /** Whether moving focus also chooses: always for a radio group, by the page's say for the others. */
   const follows = () =>
@@ -51,15 +64,13 @@ export function attachChoice(
   function refresh() {
     host.setAttribute('role', role);
     const all = items();
-    const stop = tabStop(
-      all.findIndex((item) => item.getAttribute(chosen) === 'true'),
-      all.map(isEnabled),
-    );
+    const stop = tabStop(all.findIndex(isChosen), all.map(isEnabled));
     all.forEach((item, index) => {
-      item.setAttribute('role', itemRole);
-      if (!item.hasAttribute(chosen)) item.setAttribute(chosen, 'false');
+      const option = optionOf(item);
+      option.setAttribute('role', itemRole);
+      if (!option.hasAttribute(chosen)) option.setAttribute(chosen, 'false');
       const tabindex = index === stop ? '0' : '-1';
-      if (item.getAttribute('tabindex') !== tabindex) item.setAttribute('tabindex', tabindex);
+      if (option.getAttribute('tabindex') !== tabindex) option.setAttribute('tabindex', tabindex);
     });
   }
 
@@ -73,7 +84,7 @@ export function attachChoice(
 
   /** Chooses one item and tells the host's listeners. */
   function choose(item) {
-    for (const other of items()) other.setAttribute(chosen, String(other === item));
+    for (const other of items()) optionOf(other).setAttribute(chosen, String(other === item));
     refresh();
     say('tg-change', item);
   }
@@ -84,26 +95,26 @@ export function attachChoice(
     // A control inside the item (a button in its detail) is not a choice of the item.
     const control = event.target.closest?.('button, a, input, select, textarea, [data-part="detail"]');
     if (control && control !== item && item.contains(control)) return;
-    if (item.getAttribute(chosen) !== 'true') choose(item);
+    if (!isChosen(item)) choose(item);
     else if (activates) say('tg-activate', item);
   };
 
   const onKeydown = (event) => {
     const all = items();
-    const current = all.indexOf(event.target);
+    const current = all.findIndex((item) => optionOf(item) === event.target);
     if (current < 0) return;
     const action = activates ? optionAction(event.key) : null;
     if (action) {
       event.preventDefault();
       if (!isEnabled(all[current])) return;
       if (action === 'activate') say('tg-activate', all[current]);
-      else if (all[current].getAttribute(chosen) !== 'true') choose(all[current]);
+      else if (!isChosen(all[current])) choose(all[current]);
       return;
     }
     const target = nextIndex(event.key, current, all.map(isEnabled), { pattern, orientation: orientation() });
     if (target < 0) return;
     event.preventDefault();
-    all[target].focus();
+    optionOf(all[target]).focus();
     if (follows()) choose(all[target]);
   };
 

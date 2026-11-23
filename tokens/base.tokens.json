@@ -2275,6 +2275,9 @@
         "com.toghen": {
           "css": {
             "parts": {
+              "selection": {
+                "selected": ":is([aria-selected='true'], :has(> [data-part='summary'][aria-selected='true']))"
+              },
               "disclosure": {
                 "open": ":has(> [data-part='summary'][aria-expanded='true'])"
               },
