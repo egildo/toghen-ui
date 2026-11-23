@@ -392,3 +392,32 @@ The plugin's move onto the design system raised five questions; the owner ruled 
 **Why.** Ruled by Egildo on 25 October 2026: one repository per package, and a [house](https://codeberg.org/Toghen/house) repository for what they share (the constitution, the speckit preset, the Biome config, the purity check). The plan is in house, `.reference/plans/workspace/plan-2026-10-25-tooling-codeberg.md`.
 
 **With it.** Biome lints and formats the code, `pnpm check` runs every gate, and speckit with the house preset runs the rounds. The package is published on npm for the first time, since `@toghen/figma`, in its own repository, can no longer reach this folder.
+
+## Fixed: what the review of 23 November 2026 found (23 November 2026)
+
+**Status:** built; not released yet. The plugin sees it only after a release, and a bump in figma's lockfile.
+
+**Where it comes from.** The review is house's `.reference/plans/workspace/review-2026-11-23.md`, with the round's plan beside it.
+
+**Fixed:**
+
+- `color-scheme` was declared nowhere. It is now declared where the theme is chosen, so native controls follow it.
+- A list row's controls sat inside its `role="option"`. The summary is the option now.
+- The package exported a build that works only in a checkout, and shipped `scripts/`. Phosphor was a runtime dependency.
+
+**What the build found:**
+
+- **`color-scheme` is written in the base layer, not as a token.** A scheme is not a DTCG type, and string tokens wait on a ruling.
+- **The order rows upgrade in.** A page that fills an element before attaching it, as the gallery does, upgrades the rows before the list connects. A row watching `aria-selected` then wrapped itself in the middle of the list's refresh, and kept the tab stop. The row now moves the list's attributes only as it connects, and watches only `aria-expanded`.
+- **Selection is respelled for a row: its own `aria-selected`, or its summary's.**
+  - The shared `selected` part, which also reads `aria-pressed`, `aria-checked` and `:checked`, is narrowed this way for `tg-row` only.
+  - No row uses those states today.
+- **The trade-off.**
+  - The listbox now holds content that is not an option, the trailing part and the detail, through the plain `tg-row`. That bends ARIA's rule on the elements a listbox may own.
+  - In exchange, a screen reader no longer flattens the row's controls.
+- **A test now checks what ships:** every export is a shipped file, and every runtime dependency is imported by `src/`.
+
+**Noticed, not fixed:**
+
+- `guide.md` and `specs.md` still use `pnpm --filter` and a tree rooted at `toghen-ui/`.
+- The contrast below 4.5:1 waits on Egildo.
