@@ -126,7 +126,7 @@ The stylesheet has three layers, in this order: `tg.tokens`, `tg.base`, `tg.comp
 | Layer | Holds | Role |
 |---|---|---|
 | `tg.tokens` | `tokens.css`: every token as a custom property, the defaults and each theme | The only layer that declares. |
-| `tg.base` | `base.css` and `fonts.css`: the page's text and faces, and the `data-text` roles | Reads the tokens. |
+| `tg.base` | `base.css` and `fonts.css`: the page's text and faces, the colour scheme each theme chooses for native controls, and the `data-text` roles | Reads the tokens. |
 | `tg.components` | One stylesheet per component | Reads the tokens. A part re-points a local property on its own element, which the component resets, so a component nested in another starts from its rest. |
 
 An application's rules come after the sheet, unlayered, and can adjust a component when they must.

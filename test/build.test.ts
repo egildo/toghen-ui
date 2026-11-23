@@ -76,6 +76,15 @@ test('the token layer declares the defaults and each theme; the base only reads;
   });
 });
 
+test('native controls follow the theme: the element that chooses it says which scheme it is', () => {
+  const schemes: Record<string, string> = {};
+  root.walkDecls('color-scheme', (decl) => {
+    assert.deepEqual(layersOf(decl), ['tg.base']);
+    schemes[(decl.parent as postcss.Rule).selector.replace(/\s+/g, ' ')] = decl.value;
+  });
+  assert.deepEqual(schemes, { ".figma-light, [data-theme='light']": 'light', ".figma-dark, [data-theme='dark']": 'dark' });
+});
+
 test("every hover, pressed, focus and disabled rule is a part: nested in its component's rule, in the component layer", () => {
   let parts = 0;
   root.walkRules((rule) => {

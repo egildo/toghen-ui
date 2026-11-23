@@ -1,7 +1,7 @@
 /*
  * The ground the components stand on: a box model, the `hidden` attribute that
- * wins, form controls that inherit their face, the theme root, and the text
- * styles as roles. No component lives here.
+ * wins, form controls that inherit their face, the theme root and its colour
+ * scheme, and the text styles as roles. No component lives here.
  */
 
 *,
@@ -28,6 +28,20 @@
   font: toghen(toghen-plugin.tg.text.body);
   font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * What the platform draws itself (a select's list, a checkbox, a scroll bar) follows the theme the element
+ * chooses, spelled as the theme modifier spells its contexts.
+ */
+.figma-light,
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+.figma-dark,
+[data-theme='dark'] {
+  color-scheme: dark;
 }
 
 /* The text styles, as roles: `<span data-text="label">`. */
