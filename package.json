@@ -8,13 +8,11 @@
     "./tokens/*": "./tokens/*",
     "./elements.js": "./src/elements.js",
     "./icons.js": "./src/icons.js",
-    "./styles.css": "./dist/toghen-ui.css",
-    "./build.mjs": "./scripts/build.mjs"
+    "./styles.css": "./dist/toghen-ui.css"
   },
   "files": [
     "tokens/",
     "src/",
-    "scripts/",
     "dist/"
   ],
   "scripts": {
@@ -28,12 +26,10 @@
   },
   "license": "MIT",
   "author": "Egildo Tagliareni <egildo@tagliareni.it>",
-  "dependencies": {
-    "@phosphor-icons/web": "^2.1.2"
-  },
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
     "@csstools/postcss-mixins": "1.1.0",
+    "@phosphor-icons/web": "^2.1.2",
     "@toghen/lib": "^0.1.0",
     "@toghen/postcss": "^0.1.0",
     "@types/node": "^24.1.0",

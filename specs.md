@@ -54,9 +54,8 @@ The tokens are the design system's source. There is no compiled token code. The 
 | `@toghen/ui/elements.js` | The eight custom elements, defined on import. |
 | `@toghen/ui/icons.js` | The icon names and the icon map. |
 | `@toghen/ui/styles.css` | The built stylesheet, `dist/toghen-ui.css`. Run the build first. |
-| `@toghen/ui/build.mjs` | The build as functions, for tests. |
 
-Consumers: the plugin's build reads `styles.css` and bundles `elements.js` and `icons.js`. The plugin's tests call the build.
+Consumers: the plugin's build reads `styles.css` and bundles `elements.js` and `icons.js`, and the plugin's tests read `styles.css`. The build (`scripts/build.mjs`) and the gallery are this repository's tools, run from a checkout: they are not published, and nothing the package ships needs Phosphor's package, whose font the build embeds.
 
 ## Components
 
