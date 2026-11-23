@@ -7,7 +7,7 @@
  *   data-tone      warn, err: a coloured gutter on the left
  *   label, value   a line of words, cut with an ellipsis when it does not fit
  *   tabindex       makes it interactive: pointer, pressed and focus answer
- *   aria-selected  tints the row (an option of a `tg-list`)
+ *   aria-selected  tints the row, on the row or, in a `tg-list`, on its summary
  *
  * A row with a detail is a disclosure: the element wraps the leading mark, the
  * label and the value in a `<button data-part="summary">`, with `aria-expanded`
@@ -17,7 +17,9 @@
  * itself (a row whose line loads something); it is laid out the same way. The
  * parts are the row's children, or the summary's.
  *
- * An option of a `tg-list` that holds a detail shows it while it is selected.
+ * In a `tg-list` the element wraps the same parts in a `<div data-part="summary">`,
+ * which the list makes the option, so the trailing part and the detail stay out of
+ * it; an option that holds a detail shows it while it is selected.
  */
 
 /*
@@ -125,11 +127,11 @@ tg-row > [data-part='detail'] {
 }
 
 /*
- * The detail shows while the row is open: its summary is expanded, or it is a
+ * The detail shows while the row is open: its summary is expanded, or it is the
  * selected option of a list. `!important`, as `[hidden]` has it: a page that
  * gives its detail a `display` of its own does not open a closed row.
  */
-tg-row:not(:has(> [data-part='summary'][aria-expanded='true'])):not(tg-list > tg-row[aria-selected='true']) > [data-part='detail'] {
+tg-row:not(:has(> [data-part='summary'][aria-expanded='true'])):not(tg-list > tg-row:has(> [data-part='summary'][aria-selected='true'])) > [data-part='detail'] {
   display: none !important;
 }
 

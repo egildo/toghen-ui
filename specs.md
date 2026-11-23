@@ -114,7 +114,7 @@ A component whose state sits on a child element respells that axis in its own vo
 |---|---|---|
 | `tg.checkbox` | selection, focus, availability | the checkbox's input, `:has(> input …)` |
 | `tg.field` | focus, availability | the field's input, `:has(> input …)` |
-| `tg.row` | disclosure, focus, interaction | the row's summary button |
+| `tg.row` | selection, disclosure, focus, interaction | the row's summary: its button, or in a `tg-list` the option |
 
 The document keeps one spelling per value at the root. A component says where its own states are.
 

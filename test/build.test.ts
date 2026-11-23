@@ -221,7 +221,7 @@ test("a row with a detail is a disclosure: its summary is a button without a but
   );
   // Closed, a detail is hidden even from a page that gives it a display of its own; open is a summary expanded or a selected option.
   has(
-    /tg-row:not\(:has\(> \[data-part='summary'\]\[aria-expanded='true'\]\)\):not\(tg-list > tg-row\[aria-selected='true'\]\) > \[data-part='detail'\]\s*\{[^}]*display: none !important/,
+    /tg-row:not\(:has\(> \[data-part='summary'\]\[aria-expanded='true'\]\)\):not\(tg-list > tg-row:has\(> \[data-part='summary'\]\[aria-selected='true'\]\)\) > \[data-part='detail'\]\s*\{[^}]*display: none !important/,
   );
   // The old spelling, a state on the host, is gone: the host takes no role and holds no aria-expanded.
   lacks(/tg-row:not\(\[aria-expanded='true'\]\)/, text);

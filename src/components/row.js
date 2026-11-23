@@ -22,8 +22,13 @@
  * loads something, with an action in its trailing part) keeps it: it is wired
  * the same way when the row has a detail, and left alone when it has none.
  *
- * A row in a `tg-list` is an option, not a disclosure: the list owns its roles
- * and keys, and its detail shows while it is selected.
+ * A row in a `tg-list` is an option, not a disclosure, and the option is its
+ * summary: the element wraps the same parts in a `<div data-part="summary">` and,
+ * as it connects, moves onto it the role, the tab stop and the `aria-selected`
+ * the list or the page wrote on the host. An option's content is flattened for a screen reader,
+ * as a button's is, so the trailing part and the detail, which may hold controls,
+ * stay outside it. The list owns the roles and keys, and the detail shows while
+ * the option is selected.
  *
  * A row with neither is the page's to act on. An interactive one (`tabindex`)
  * is not a native button, so Enter and Space on it are a click: the page listens
@@ -66,23 +71,37 @@ define(
         return this.parentElement?.localName === 'tg-list';
       }
 
-      /** Gives a row with a detail its summary button, and the summary its state. */
-      disclose() {
-        const detail = this.querySelector(':scope > [data-part="detail"]');
-        if (!detail || this.inList) return;
+      /** The summary: the page's own, or a `tag` made around the line's parts, every part but the trailing one and the detail. */
+      summaryOf(tag) {
+        if (this.summary) return this.summary;
+        const parts = [...this.children].filter(
+          (child) => child.hasAttribute('data-part') && !child.matches('[data-part="trailing"], [data-part="detail"]'),
+        );
+        if (!parts.length) return null;
+        const summary = document.createElement(tag);
+        if (tag === 'button') summary.type = 'button';
+        summary.setAttribute('data-part', 'summary');
+        parts[0].before(summary);
+        summary.append(...parts);
+        return summary;
+      }
 
-        let summary = this.summary;
-        if (!summary) {
-          const parts = [...this.children].filter(
-            (child) => child.hasAttribute('data-part') && !child.matches('[data-part="trailing"], [data-part="detail"]'),
-          );
-          if (!parts.length) return;
-          summary = document.createElement('button');
-          summary.type = 'button';
-          summary.setAttribute('data-part', 'summary');
-          parts[0].before(summary);
-          summary.append(...parts);
+      /** Gives a row with a detail its summary button, and the summary its state; in a list, gives the option its summary. */
+      disclose() {
+        if (this.inList) {
+          const option = this.summaryOf('div');
+          for (const name of ['role', 'tabindex', 'aria-selected']) {
+            const value = this.getAttribute(name);
+            if (!option || value === null) continue;
+            this.removeAttribute(name);
+            option.setAttribute(name, value);
+          }
+          return;
         }
+        const detail = this.querySelector(':scope > [data-part="detail"]');
+        if (!detail) return;
+        const summary = this.summaryOf('button');
+        if (!summary) return;
         detail.id ||= `tg-row-detail-${++serial}`;
         summary.setAttribute('aria-controls', detail.id);
         // The state is the summary's; what the page wrote on the host is its way of starting open.
