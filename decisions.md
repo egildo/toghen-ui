@@ -395,7 +395,7 @@ The plugin's move onto the design system raised five questions; the owner ruled 
 
 ## Fixed: what the review of 23 November 2026 found (23 November 2026)
 
-**Status:** built; not released yet. The plugin sees it only after a release, and a bump in figma's lockfile.
+**Status:** done, in 0.2.0. The plugin sees it only after a release, and a bump in figma's lockfile.
 
 **Where it comes from.** The review is house's `.reference/plans/workspace/review-2026-11-23.md`, with the round's plan beside it.
 

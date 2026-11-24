@@ -18,11 +18,11 @@ importers:
         specifier: ^2.1.2
         version: 2.1.2
       '@toghen/lib':
-        specifier: ^0.1.0
-        version: 0.1.0
+        specifier: ^0.2.0
+        version: 0.2.0
       '@toghen/postcss':
-        specifier: ^0.1.0
-        version: 0.1.0(@toghen/lib@0.1.0)(postcss@8.5.31)
+        specifier: ^0.2.0
+        version: 0.2.0(@toghen/lib@0.2.0)(postcss@8.5.31)
       '@types/node':
         specifier: ^24.1.0
         version: 24.19.2
@@ -502,15 +502,15 @@ packages:
   '@swc/helpers@0.5.23':
     resolution: {integrity: sha512-5lSsMOTXURePglDfvuAQUqkGek9Hg2kksOYay2m0+XR++b2NWYL/4sWyuvVBIs8oKnJaxkdi9whaL/sqN13afw==}
 
-  '@toghen/lib@0.1.0':
-    resolution: {integrity: sha512-LO4qN1Le/LyB44k6AIxxOk/hGpjBI94P7xfU6nJpZgAJja4Md7MAB/Iic9SJvLHWzeN4eQG22l/BrizJ2/zPEg==}
+  '@toghen/lib@0.2.0':
+    resolution: {integrity: sha512-akdLt35beNwKkSLqe5K4L9A7awiaCRerrzMrvfeAacOJvkXLi6CctZutZ18S0/e/lr5nyApkJm98v36g1KKUIQ==}
     engines: {node: '>=24'}
 
-  '@toghen/postcss@0.1.0':
-    resolution: {integrity: sha512-+OPWq0gX4lZ4I9QsBJji2D8G2WumfPL0X/v3kSF3Q8DLEKpUnx5kGjtJj+c13U0Ieb65PIgpYLMhNSEHUo7Zng==}
+  '@toghen/postcss@0.2.0':
+    resolution: {integrity: sha512-9LwgK8zOe2upEJ8sMo1SnMHcO41bHWhSKDGl91YFt/ZI8EvD/262m83ipTjJ+v1xExgBMn6uVQwkGCd2yCE/lg==}
     engines: {node: '>=24'}
     peerDependencies:
-      '@toghen/lib': ^0.1.0
+      '@toghen/lib': ^0.2.0
       postcss: ^8.0.0
 
   '@types/node@24.19.2':
@@ -927,13 +927,13 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@toghen/lib@0.1.0':
+  '@toghen/lib@0.2.0':
     dependencies:
       culori: 4.0.2
 
-  '@toghen/postcss@0.1.0(@toghen/lib@0.1.0)(postcss@8.5.31)':
+  '@toghen/postcss@0.2.0(@toghen/lib@0.2.0)(postcss@8.5.31)':
     dependencies:
-      '@toghen/lib': 0.1.0
+      '@toghen/lib': 0.2.0
       mdn-data: 2.37.2
       postcss: 8.5.31
 
